@@ -23,3 +23,5 @@ Serve with ionic
 ````bash 
 ionic serve
 ````
+
+UI inspired by <a>https://dribbble.com/shots/4109457-Crypto-Wallet-App/attachments/941123</a>
