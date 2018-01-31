@@ -3,6 +3,8 @@
 
 A simple ionic 3 crypto portfolio app I made for my Mobile Applications Class
 
+![Alt text](images/IMG_1302.PNG)
+
 ## Building
 
 #### NPM
