@@ -1,14 +1,29 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ul id="type-select">
+    <li>wallet total</li>
+  </ul>
+  <div class="total-figure">
+    <span class="currency">$</span><span class="fig">{{ totalValue() | number:'.2' }}</span>
+  </div>
+  <div *ngIf="loading" class="loader">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf="!loading">
+    <div *ngIf="records.length == 0" class="empty">
+      <img src="assets/img/open-box.png" />
+      <h5>You haven't added any records yet, click the button below to get started.</h5>
+    </div>
+    <crypto-list (refresh)="loadRecords(null)" [coins]="coins" [records]="records"></crypto-list>
+  </div>
+  <div ion-fixed>
+    <div (click)="openNewRecordPage()" class="add">
+      <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+    </svg>
+    </div>
+  </div>
 </ion-content>

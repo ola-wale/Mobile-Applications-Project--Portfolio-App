@@ -1,0 +1,121 @@
+crypto-list {
+  margin-top: 32px;
+  display: block;
+
+  ul#main {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      min-height: 60px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 20px 100px 20px rgba(50, 50, 93, 0.1), -1px 18px 105px 20px rgba(50, 50, 93, 0.15), 0 -1px 20px 20px rgba(0, 0, 0, 0.08);
+      align-content: center;
+      align-items: center;
+      padding: 15px;
+      position: relative;
+      background: linear-gradient(to right, #468ef0 0%,#7511d2 100%);
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+
+      &.coin-BTC,
+      &.coin-BCH {
+        background: linear-gradient(to right, #fe4740 0%,#ffb12d 100%);
+      }
+
+      &.coin-XRP{
+        background: linear-gradient(to right, #01a5e2 0%,#00639c 100%);
+      }
+
+      &.coin-NEO{
+        background: linear-gradient(to right, #bbe82d 0%,#51ba00 100%);
+      }
+
+      &.coin-WAVES{
+        background: linear-gradient(to right, #53c1d2 0%,#059adb 100%);
+      }
+
+      &.coin-LTC{
+        background: linear-gradient(to right, #a7a7a7 0%,#6e7073 100%);
+      }
+
+      &.coin-XLM{
+        background: linear-gradient(to right, #ed8117 0%,#efbb19 100%);
+      }
+
+      &.coin-ADA{
+        background: linear-gradient(to right, #24969a 0%,#1b7477 100%);
+      }
+
+      &.coin-ETH {
+        background: linear-gradient(to right, #468ef0 0%,#7511d2 100%);
+      }
+
+      h6 {
+        display: inline-block;
+        margin: 0;
+
+        &.value {
+          color: white;
+          margin-left: 8px;
+        }
+
+        &.amount {
+          color: white;
+          position: relative;
+
+          &:before {
+            position: absolute;
+            right: -9px;
+            width: 1px;
+            background-color: white;
+            top: -7px;
+            bottom: -7px;
+            content: '';
+            opacity: 0.2;
+          }
+        }
+      }
+
+      img.coin {
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.29);
+        border-radius: 100%;
+      }
+
+      .col-1,
+      .col-2 {
+        flex-grow: 1;
+
+        * {
+          vertical-align: middle;
+        }
+      }
+
+      .col-1 {
+        text-align: left;
+      }
+
+      .col-2 {
+        text-align: right;
+
+        .cline {
+          margin-left: 10px;
+          font-weight: 800;
+          &.up{
+            color: #88ff00;
+          }
+          &.down{
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

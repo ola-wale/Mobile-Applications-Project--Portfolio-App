@@ -1,3 +1,104 @@
 page-home {
+  ion-content {
+    background: linear-gradient(to bottom, #091f78 0%, #16213f 100%) !important;
 
+    .empty {
+      img {
+        max-width: 25%;
+      }
+
+      h5 {
+        color: white;
+        font-weight: 100;
+        font-size: 14px;
+      }
+      text-align: center;
+      margin-top: 50px;
+      animation: fadein 1s;
+    }
+
+    .loader{
+      circle{
+        stroke:white !important;
+      }
+      margin-top: 50px;
+    }
+
+    #type-select {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 16px;
+
+      li {
+        text-transform: uppercase;
+        background-color: white;
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 19px;
+        font-weight: 600;
+        color: #092076;
+      }
+    }
+
+    .total-figure {
+      font-size: 37px;
+      color: white;
+      font-weight: 300;
+      position: relative;
+
+      span {
+        &.currency {
+          font-size: 20px;
+          font-weight: 400;
+          opacity: 0.7;
+          position: absolute;
+          top: 0;
+        }
+
+        &.fig {
+          margin-left: 13px;
+        }
+      }
+    }
+
+    div.add {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 27px;
+      border-radius: 100%;
+      background: linear-gradient(to bottom, #05d6e0 0%,#04a7f7 100%);
+      width: 50px;
+      height: 50px;
+      display: table;
+      box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.29);
+      transition: all 0.1s ease-out;
+
+      &:active {
+        transform: translateX(-50%) scale(1.2);
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        left: 50%;
+      }
+    }
+
+    [ion-fixed] {
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

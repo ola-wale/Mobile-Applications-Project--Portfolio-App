@@ -1,0 +1,13 @@
+<!-- Generated template for the CryptoListComponent component -->
+<ul id="main">
+  <li (click)="delete(record)" *ngFor="let record of records" class="coin-{{record.coin}}">
+    <div class="col-1">
+      <img class="coin" src="assets/img/coins/{{record.coin | lowercase}}.png" />
+      <h6 class="value">${{ findCoinData(record.coin)?.price_usd * record.quantity | number }}</h6>
+    </div>
+    <div class="col-2">
+      <h6 class="amount" [innerHTML]="record.quantity"></h6>
+      <span [ngClass]="{'down': findCoinData(record.coin)?.percent_change_1h < 0, 'up': findCoinData(record.coin)?.percent_change_1h >= 0}" class="cline">{{findCoinData(record.coin)?.percent_change_1h}}%</span>
+    </div>
+  </li>
+</ul>

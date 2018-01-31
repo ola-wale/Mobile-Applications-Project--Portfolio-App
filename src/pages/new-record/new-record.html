@@ -1,0 +1,61 @@
+<!--
+  Generated template for the NewRecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add New Record</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="loading" class="loader">
+    <ion-spinner></ion-spinner>
+  </div>
+  <form *ngIf="!loading" (ngSubmit)="saveRecord($event,fForm)" #fForm="ngForm">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>Coin</ion-label>
+          <ion-select name="selected-coin" [(ngModel)]="form.coin">
+            <ion-option *ngFor="let coin of coins" [value]="coin.symbol" [innerHTML]="coin.name"></ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>
+        <ion-item>
+          <ion-label color="primary" stacked>Entry Price</ion-label>
+          <ion-input name="coin-price" [(ngModel)]="form.price" type="number" placeholder="1.134"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col (click)="setCurrentPrice()" class="setPrice" col-2>
+        <ion-icon name="logo-usd"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label color="primary" stacked>Quantity</ion-label>
+          <ion-input name="coin-quantity" [(ngModel)]="form.quantity" type="number" placeholder="200"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button type="submit">
+  <div class="add">
+    <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+    </svg>
+  </div>
+  </button>
+</form>
+</ion-content>
