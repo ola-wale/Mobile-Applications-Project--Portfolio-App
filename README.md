@@ -4,6 +4,9 @@
 A simple ionic 3 crypto portfolio app I made for my Mobile Applications Class
 
 <img src="images/IMG_1302.PNG" width="400">
+<img src="images/IMG_1299.PNG" width="400">
+<img src="images/IMG_1300.PNG" width="400">
+<img src="images/IMG_1301.PNG" width="400">
 
 ## Building
 
