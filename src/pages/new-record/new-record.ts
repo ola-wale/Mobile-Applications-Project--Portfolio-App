@@ -25,7 +25,6 @@ export class NewRecordPage {
     storage.get('records').then((val) => {
       if (val) {
         this.records = val;
-        console.log(val);
       }
     });
   }
