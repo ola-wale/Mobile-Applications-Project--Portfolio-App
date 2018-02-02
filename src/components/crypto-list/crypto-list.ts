@@ -25,10 +25,11 @@ export class CryptoListComponent implements AfterViewInit {
         return this.coins[i];
       }
     }
+    return [];
   }
 
   delete(record) {
-    let alert = this.alertCtrl.create({
+    this.alertCtrl.create({
       title: 'Delete ' + record.coin + ' record',
       message: 'Do you want to delete this record?',
       buttons: [
@@ -49,8 +50,7 @@ export class CryptoListComponent implements AfterViewInit {
           }
         }
       ]
-    });
-    alert.present();
+    }).present();
   }
 
 }
