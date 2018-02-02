@@ -10,9 +10,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class CoinMarketCapProvider {
   public apiRoot = 'https://api.coinmarketcap.com/v1/';
-  constructor(public http: HttpClient) {
-    console.log('Hello CoinMarketCapProvider Provider');
-  }
+  constructor(public http: HttpClient) {}
 
   public getCoins(): Observable<any>{
     return this.http.get(this.apiRoot+'ticker/');
